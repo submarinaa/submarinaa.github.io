@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include min($tablet) {
+    margin: 0 auto;
+    padding-left: 78px;
+    padding-right: 78px;
+  }
+
+  @include min($desktop) {
+    max-width: $desktop;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

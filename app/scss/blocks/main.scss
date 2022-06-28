@@ -1,0 +1,12 @@
+.main {
+  padding-bottom: 40px;
+  overflow: hidden;
+
+  @include min($tablet) {
+    padding-bottom: 80px;
+  }
+
+  @include min($desktop) {
+    padding-bottom: 88px;
+  }
+}
