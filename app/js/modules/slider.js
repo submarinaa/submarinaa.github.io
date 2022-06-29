@@ -1,12 +1,13 @@
 const swiper = new Swiper('.js-history-slider', {
   slidesPerView: 3,
+  slidesPerGroup: 1,
 
   breakpoints: {
     320: {
       slidesPerView: 2,
     },
-    768: {
-      slidesPerView: 2,
+    576: {
+      slidesPerView: 3,
     }
   },
 

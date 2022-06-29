@@ -1,5 +1,10 @@
 .slider {
   position: relative;
+  margin-right: -16px;
+
+  @include min($tablet) {
+    margin-right: 0;
+  }
 }
 
 .slider__item-year {
@@ -7,13 +12,34 @@
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 13px;
+
   font-size: 30px;
   line-height: 1.33;
 
   @include min($desktop) {
     margin-bottom: 7px;
+
     font-size: 36px;
     line-height: 1.1;
+  }
+}
+
+.slider__item-description {
+  min-width: 330px;
+  margin: 0;
+
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  @include min($tablet) {
+    min-width: 183px;
+    -webkit-line-clamp: 6;
+  }
+
+  @include min($desktop) {
+    -webkit-line-clamp: 3;
   }
 }
 
@@ -21,20 +47,33 @@
   position: absolute;
   bottom: 0;
   top: auto;
+
   width: 48px;
   height: 48px;
+
   background-size: auto;
   background-repeat: no-repeat;
   background-position: 0 0;
   background-image: url("../img/slider/button.svg");
+
+  transition: 0.3s ease;
+  opacity: 1;
 
   &::after,
   &::before {
     display: none;
   }
 
+  &.swiper-button-disabled {
+    opacity: 0.4;
+  }
+
   &--next {
-    right: 0;
+    right: 16px;
+
+    @include min($tablet) {
+      right: 0;
+    }
   }
 
   &--prev {
@@ -47,8 +86,10 @@
   position: absolute;
   left: 0;
   top: 50%;
+
   width: 100%;
   height: 1px;
+
   background-color: $orange-color;
 
   &::before {
@@ -57,33 +98,65 @@
     left: 0;
     top: 50%;
     transform: translateY(-8px);
+
     width: 16px;
     height: 16px;
+
     background-color: $orange-color;
     border-radius: 50%;
   }
 }
 
+.slider__item-content {
+  height: 50%;
+}
+
 .slider__item {
   position: relative;
   max-width: 360px;
+  min-height: 285px;
   height: auto;
 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
   &:nth-child(even) {
-    padding-top: 170px;
+    justify-content: flex-end;
+
+    .slider__item-year {
+      margin-top: 17px;
+
+      @include min($desktop) {
+        margin-top: 47px;
+      }
+    }
   }
 
   &:last-child {
     .slider__item-line {
+      height: 0;
+
       &::after {
         content: "";
         position: absolute;
         left: 0;
         top: 50%;
+
         width: 500%;
         height: 1px;
+
         background-color: $orange-color;
       }
     }
+  }
+
+  @include min($tablet) {
+    min-height: 405px;
+  }
+
+  @include min($desktop) {
+    min-height: 300px;
   }
 }

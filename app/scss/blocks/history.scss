@@ -1,13 +1,5 @@
 .history {
   padding-top: 183px;
-
-  @include min($tablet) {
-    padding-top: 252px;
-  }
-
-  @include min($desktop) {
-    padding-top: 392px;
-  }
 }
 
 .history__wrapper {
@@ -52,7 +44,7 @@
 }
 
 .history__subtitle {
-  max-width: 620px;
+  max-width: 660px;
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
