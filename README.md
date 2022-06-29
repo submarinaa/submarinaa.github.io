@@ -1,3 +1,5 @@
+Опубликовано https://submarinaa.github.io/build/
+
 **1. Установка пакетов:**
 > npm i
 
